@@ -20,7 +20,7 @@ export const createEmployeeQuery = `
                 $1,
                 $2,
                 $3,
-                COALESCE($4::role_type,'Intern'::role_type)
+                COALESCE($4::role_type,'Intern'::role_type),
                 $5
                 )
                 RETURNING *

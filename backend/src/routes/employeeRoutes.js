@@ -14,6 +14,6 @@ routes.post("/", createEmployee);
 routes.get("/", getAllEmployee);
 routes.put("/:id", updateEmployee);
 routes.delete("/:id", deleteEmployee);
-routes.get("/:id", deleteEmployee);
+routes.get("/:id", getEmployee);
 
 export default routes;
