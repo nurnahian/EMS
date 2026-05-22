@@ -1,5 +1,7 @@
 import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
+import EmployeeModal from "./components/EmployeeModal";
+import EmployeeTable from "./components/EmployeeTable";
 
 export const backendUrl = "http://localhost:5001/api/employee";
 
@@ -31,7 +33,17 @@ const App = () => {
   // useEffect(() => {
   //   fetchEmployeeDetails();
   // }, []);
-  return <div className="bg-amber-200 p-4">App</div>;
+  return (
+    <div className="bg-amber-200 p-4">
+      <div>
+        <div>
+          <h1>Employee Management</h1>
+          <EmployeeModal ></EmployeeModal>
+        </div>
+        <EmployeeTable />
+      </div>
+    </div>
+  );
 };
 
 export default App;
