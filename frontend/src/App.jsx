@@ -17,11 +17,16 @@ const App = () => {
     // console.log(data);
   }
 
-  const { isPending, isError, data, error } = useQuery({
+  const {
+    isPending,
+    isError,
+    data = [],
+    error,
+  } = useQuery({
     queryKey: ["employee_details"],
     queryFn: fetchEmployeeDetails,
   });
-
+  console.log(data);
   if (isPending) {
     return <div>Loding...</div>;
   }
@@ -34,13 +39,13 @@ const App = () => {
   //   fetchEmployeeDetails();
   // }, []);
   return (
-    <div className="bg-amber-200 p-4">
+    <div className="">
       <div>
         <div>
           <h1>Employee Management</h1>
-          <EmployeeModal ></EmployeeModal>
+          <EmployeeModal></EmployeeModal>
         </div>
-        <EmployeeTable />
+        <EmployeeTable data={data} />
       </div>
     </div>
   );
