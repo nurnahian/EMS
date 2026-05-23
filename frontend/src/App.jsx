@@ -39,11 +39,15 @@ const App = () => {
   //   fetchEmployeeDetails();
   // }, []);
   return (
-    <div className="">
+    <div>
       <div>
         <div>
-          <h1>Employee Management</h1>
-          <EmployeeModal></EmployeeModal>
+          <h1 className="text-center">Employee Management</h1>
+          <EmployeeModal type="add">
+            <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
+              Add Employee
+            </button>
+          </EmployeeModal>
         </div>
         <EmployeeTable data={data} />
       </div>
