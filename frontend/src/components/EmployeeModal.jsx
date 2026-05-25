@@ -84,6 +84,13 @@ const EmployeeModal = (data) => {
     type === "add" ? addMutation.mutate(info) : updateMutation.mutate(info);
   };
 
+  const formFil = [
+    { label: "Name", name: name },
+    { label: "Email", name: "email" },
+    { label: "Age", name: "age", type: "number" },
+    { label: "Salary", name: "salary" },
+  ];
+
   return (
     <div>
       <div>{children}</div>
@@ -97,12 +104,7 @@ const EmployeeModal = (data) => {
               </button>
             </div>
             <div>
-              {[
-                { label: "Name", name: name },
-                { label: "Email", name: "email" },
-                { label: "Age", name: "age", type: "number" },
-                { label: "Salary", name: "salary" },
-              ].map((field) => (
+              {formFil.map((field) => (
                 <div key={field.name}>
                   <label>{field.label}</label>
                   <input
