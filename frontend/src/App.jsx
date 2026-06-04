@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import EmployeeModal from "./components/EmployeeModal";
 import EmployeeTable from "./components/EmployeeTable";
+import { Button } from "./components/ui/button";
 
 export const backendUrl = "http://localhost:5001/api/employee";
 
@@ -44,9 +45,12 @@ const App = () => {
         <div>
           <h1 className="text-center">Employee Management</h1>
           <EmployeeModal type="add">
-            <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
+            {/* <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
               Add Employee
-            </button>
+            </button> */}
+            <Button size="lg">
+              Add Employee
+            </Button>
           </EmployeeModal>
         </div>
         <EmployeeTable data={data} />
