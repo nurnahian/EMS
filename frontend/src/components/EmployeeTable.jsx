@@ -1,5 +1,6 @@
 import React from "react";
 import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
+import EmployeeModal from "./EmployeeModal";
 
 const EmployeeTable = ({ data }) => {
   if (!data?.length) {
@@ -38,9 +39,11 @@ const EmployeeTable = ({ data }) => {
                     <button className="p-2 rounded-lg bg-gray-100 shadow-[3px_3px_6px_#c5c5c5,-3px_-3px_6px_#ffffff] hover:shadow-inner text-red-600 transition">
                       <MdOutlineDelete />
                     </button>
-                    <button className="p-2 rounded-lg bg-gray-100 shadow-[3px_3px_6px_#c5c5c5,-3px_-3px_6px_#ffffff] hover:shadow-inner text-green-600 transition">
-                      <MdOutlineEdit />
-                    </button>
+                    <EmployeeModal data={item} type="update">
+                      <button className="p-2 rounded-lg bg-gray-100 shadow-[3px_3px_6px_#c5c5c5,-3px_-3px_6px_#ffffff] hover:shadow-inner text-green-600 transition">
+                        <MdOutlineEdit />
+                      </button>
+                    </EmployeeModal>
                   </div>
                 </td>
               </tr>

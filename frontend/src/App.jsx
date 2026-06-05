@@ -48,7 +48,7 @@ const App = () => {
             {/* <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
               Add Employee
             </button> */}
-            <Button size="lg">
+            <Button size="lg" className="cursor-pointer">
               Add Employee
             </Button>
           </EmployeeModal>
