@@ -11,7 +11,7 @@ export const createEmployeeTableQuery = `
                 salary DECIMAL(8,2) NOT NULL
                 )`;
 
-export const getAllEmployeeQuery = `SELECT * FROM employee_details`;
+export const getAllEmployeeQuery = `SELECT * FROM employee_details order by id DESC`;
 
 export const createEmployeeQuery = `
                 INSERT INTO employee_details
@@ -37,7 +37,7 @@ export const updateEmployeeQuery = `
                 email = COALESCE($2,email),
                 age = COALESCE($3,age),
                 role = COALESCE($4::role_type,role),
-                salary = COALESCE($5,salary),
+                salary = COALESCE($5,salary)
                 WHERE id=$6
                 RETURNING *
                 `;

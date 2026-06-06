@@ -16,10 +16,13 @@ const EmployeeModal = ({ children, type = "add", data }) => {
   const handleChanges = (e) => {
     setInfo((prev) => ({
       ...prev,
-      [e.target.name]: [e.target.value],
+      [e.target.name]: e.target.value,
     }));
   };
 
+  const resetFrom = () => {
+    setInfo({ name: "", email: "", age: "", salary: "", role: "" });
+  };
   /**
    * Create
    */
@@ -39,6 +42,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
     },
     onSuccess: () => {
       toast.success("Employee added successfully");
+      resetFrom();
       setIsOpen(false);
       queryClient.invalidateQueries({ queryKey: ["employee_details"] });
     },
@@ -77,7 +81,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
 
     for (const field of required) {
       if (!info[field]?.toString().trim()) {
-        return toast.error("Please fill are fileds");
+        return toast.error("Please fill all fields");
       }
     }
 
@@ -93,10 +97,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
 
   return (
     <>
-      <div
-        className="inline-block mb-5 float-right md:mr-10 mr-2"
-        onClick={() => setIsOpen(true)}
-      >
+      <div className="inline-block float-right" onClick={() => setIsOpen(true)}>
         {children}
       </div>
       {isOpen && (
@@ -106,7 +107,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
             //onClick={() => setIsOpen(false)}
             className="absolute inset-0 bg-black/40 flex justify-center items-center p-4"
           >
-            <div className="relative w-full max-w-md mx-4 rounded-2xl bg-gray-100 p-6 shadow-[10px_10px_25px_#c5c5c5,-10px_-10px_25px]">
+            <div className="relative w-full max-w-md mx-4 rounded-2xl bg-gray-100 p-6 shadow-[5px_5px_15px_#c5c5c5,-5px_-5px_15px]">
               <div className="flex items-center justify-between md-6">
                 <h2 className="text-lg font-semibold text-gray-700">
                   {type === "add" ? "Add Employee" : "Update Employee"}
@@ -165,7 +166,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
                 </button>
                 <button
                   onClick={handleFormSubmission}
-                  className="bg-[#1ba802] py-1 px-5 text-white font-semibold rounded-2xl cursor-pointer shadow-[3px_3px_6px_#c5c5c5,-3px_-3px_6px_#fff]"
+                  className="bg-[#1ba802] py-2 px-4 text-white font-semibold rounded-2xl cursor-pointer shadow-[3px_3px_6px_#c5c5c5,-3px_-3px_6px_#fff]"
                 >
                   {type === "add" ? "Add" : "Update"}
                 </button>

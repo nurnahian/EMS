@@ -12,7 +12,6 @@ import {
 const createEmployee = async (req, res, next) => {
   try {
     const { name, email, age, role, salary } = req.body;
-
     if (!name || !email || !age || !role || !salary) {
       return res.json({ error: "Missing fields" });
     }
@@ -41,6 +40,7 @@ const updateEmployee = async (req, res, next) => {
       age,
       role,
       salary,
+      id
     ]);
 
     if (result.rowCount === 0) {

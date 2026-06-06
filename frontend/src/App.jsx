@@ -27,7 +27,7 @@ const App = () => {
     queryKey: ["employee_details"],
     queryFn: fetchEmployeeDetails,
   });
-  console.log(data);
+  //console.log(data);
   if (isPending) {
     return <div>Loding...</div>;
   }
@@ -43,15 +43,19 @@ const App = () => {
     <div>
       <div>
         <div>
-          <h1 className="text-center">Employee Management</h1>
-          <EmployeeModal type="add">
-            {/* <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
+          <h1 className="text-center bg-gray-200 p-4 font-medium text-2xl">
+            Employee Management
+          </h1>
+          <div className="pt-2 pb-2">
+            <EmployeeModal type="add">
+              {/* <button className="px-5 rounded-xl bg-gray-100 text-gray-700 shadow-[4px_4px_8px_#c5c5c5,-4px_-4px_8px_#ffffff]">
               Add Employee
             </button> */}
-            <Button size="lg" className="cursor-pointer">
-              Add Employee
-            </Button>
-          </EmployeeModal>
+              <Button size="lg" className="cursor-pointer">
+                Add Employee
+              </Button>
+            </EmployeeModal>
+          </div>
         </div>
         <EmployeeTable data={data} />
       </div>
