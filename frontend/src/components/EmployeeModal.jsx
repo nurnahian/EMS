@@ -97,7 +97,7 @@ const EmployeeModal = ({ children, type = "add", data }) => {
 
   return (
     <>
-      <div className="inline-block float-right" onClick={() => setIsOpen(true)}>
+      <div className="inline-block" onClick={() => setIsOpen(true)}>
         {children}
       </div>
       {isOpen && (
