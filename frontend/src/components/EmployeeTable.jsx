@@ -47,7 +47,7 @@ const EmployeeTable = ({ data }) => {
       <div className="bg-white rounded-3xl shadow-lg overflow-hidden">
         {/* Table Container */}
         <div className="overflow-x-auto">
-          <table className="w-full min-w-[700px] text-sm">
+          <table className="w-full min-w-175 text-sm">
             <thead>
               <tr className="bg-gray-50 border-b border-gray-200">
                 <th className="py-5 px-6 text-left font-semibold text-gray-700">
