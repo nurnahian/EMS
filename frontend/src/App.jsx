@@ -40,10 +40,10 @@ const App = () => {
   //   fetchEmployeeDetails();
   // }, []);
   return (
-    <div>
-      <div>
-        <div>
-          <h1 className="text-center bg-gray-200 p-4 font-medium text-2xl">
+    <div className="min-h-screen bg-gray-100 p-6">
+      <div className="max-w-7xl mx-auto space-y-8">
+        <div className="flex justify-between items-center">
+          <h1 className="font-semibold text-2xl justify-between">
             Employee Management
           </h1>
           <div className="pt-2 pb-2">
